@@ -2,31 +2,31 @@ plots:
   - Accuracy:
       x: step
       y:
-        training/plots/metrics/train/acc.tsv: train/acc
-        training/plots/metrics/test/acc.tsv: test/acc
+        live/plots/metrics/train/acc.tsv: acc
+        live/plots/metrics/test/acc.tsv: acc
       y_label: accuracy
   - Loss:
       x: step
       y:
-        training/plots/metrics/train/loss.tsv: train/loss
-        training/plots/metrics/test/loss.tsv: test/loss
+        live/plots/metrics/train/loss.tsv: loss
+        live/plots/metrics/test/loss.tsv: loss
       y_label: loss
   - Confusion matrix:
       template: confusion
       x: actual
       y:
-        training/plots/sklearn/confusion_matrix.json: predicted
+        live/plots/sklearn/confusion_matrix.json: predicted
   - Actual vs Predicted:
-      template: jitter.json
+      template: scatter
       x: actual
       y:
-        training/plots/sklearn/confusion_matrix.json: predicted
+        live/plots/sklearn/confusion_matrix.json: predicted
   - hist.csv:
       x: preds
       y: digit
       template: bar_horizontal
       title: Histogram of Predictions
-  - training/plots/images
+  - live/plots/images
 stages:
   train:
     cmd: python train.py
@@ -38,10 +38,10 @@ stages:
     outs:
       - model.pt:
           checkpoint: true
-      - training/plots:
+      - live/plots:
           persist: true
       - hist.csv
     metrics:
-      - training/metrics.json:
+      - live/metrics.json:
           persist: true
           cache: false

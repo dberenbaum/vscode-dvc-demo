@@ -128,7 +128,7 @@ def main():
         torch.nn.Dropout(0.1),
         torch.nn.Linear(64, 10),
     )
-    live = Live("training", report=None)
+    live = Live("live", dvcyaml=True)
 
     # Load model.
     if os.path.exists("model.pt"):
