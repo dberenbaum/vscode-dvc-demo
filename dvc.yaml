@@ -1,4 +1,12 @@
 plots:
+  - acc_v_loss:
+      x: step
+      y:
+        training/plots/metrics/train/acc.tsv: acc
+        training/plots/metrics/test/acc.tsv: acc
+        training/plots/metrics/train/loss.tsv: loss
+        training/plots/metrics/test/loss.tsv: loss
+      y_label: Accuracy or loss
   - Accuracy:
       x: step
       y:
