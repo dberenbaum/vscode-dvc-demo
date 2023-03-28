@@ -1,4 +1,6 @@
 [core]
     remote = storage
+[feature]
+    studio_token = isat_krVuC6UWZShWmc6iRSGmYIWncHzpLKwdurdzgz2nhFGhuziV
 ['remote "storage"']
     url = https://remote.dvc.org/mnist-vscode
