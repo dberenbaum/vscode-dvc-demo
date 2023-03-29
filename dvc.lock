@@ -13,19 +13,19 @@ stages:
     params:
       params.yaml:
         epochs: 15
-        lr: 0.003
-        weight_decay: 0
+        lr: 0.001
+        weight_decay: 0.05
     outs:
     - path: hist.csv
-      md5: e5caf6a079cb54536c5bbf9fb9bd2d6f
-      size: 77
+      md5: f6817008096efd8adc9c971298d11afb
+      size: 46
     - path: model.pt
-      md5: 38126781764ca9fb04496ca2c2173056
+      md5: 6ee27999b1022ccc2c2012876d496b44
       size: 439383
     - path: training/metrics.json
-      md5: 18513f05a8a0cad4885ff4b79f3700b9
-      size: 177
+      md5: 8eb5258a41e7c83d659a9edbb37d3ca4
+      size: 189
     - path: training/plots
-      md5: 1c0b8428efe690fd54b0104b51e7c266.dir
-      size: 643892
+      md5: e806fc44aa36e631c0538f155e2500cd.dir
+      size: 631636
       nfiles: 6
