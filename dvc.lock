@@ -17,15 +17,15 @@ stages:
         weight_decay: 0.05
     outs:
     - path: hist.csv
-      md5: c06127dcfbc2d573623c73f9bc4f071e
-      size: 59
+      md5: 91b4976e33d829d478c24b8caa073a59
+      size: 68
     - path: model.pt
-      md5: 9a263a429476b803840680e352a56a96
+      md5: f136cead9a261e6df1a92b097fd74c40
       size: 439383
     - path: training/metrics.json
-      md5: d7a98e0b30b4960993ebb9685a886e11
+      md5: 56c049d35baf5d3867b4aa108b4f9adb
       size: 187
     - path: training/plots
-      md5: 0becf85f36aef6efda7dc67e96df1771.dir
-      size: 629102
+      md5: e17ee0ad9ca9c7ed5b588f139c92bff7.dir
+      size: 634726
       nfiles: 6
