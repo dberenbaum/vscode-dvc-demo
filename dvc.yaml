@@ -16,3 +16,5 @@ stages:
     plots:
       - training/plots:
           persist: true
+      - dogs:
+          cache: False

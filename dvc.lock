@@ -16,6 +16,10 @@ stages:
         lr: 0.003
         weight_decay: 0
     outs:
+    - path: dogs
+      md5: 0a3b57f6035d8f093390ed34f23e6901.dir
+      size: 9905097
+      nfiles: 400
     - path: hist.csv
       md5: e5caf6a079cb54536c5bbf9fb9bd2d6f
       size: 77
