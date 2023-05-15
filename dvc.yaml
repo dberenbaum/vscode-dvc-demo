@@ -1,32 +1,3 @@
-plots:
-  - Accuracy:
-      x: step
-      y:
-        training/plots/metrics/train/acc.tsv: acc
-        training/plots/metrics/test/acc.tsv: acc
-      y_label: accuracy
-  - Loss:
-      x: step
-      y:
-        training/plots/metrics/train/loss.tsv: loss
-        training/plots/metrics/test/loss.tsv: loss
-      y_label: loss
-  - Confusion matrix:
-      template: confusion
-      x: actual
-      y:
-        training/plots/sklearn/confusion_matrix.json: predicted
-  - hist.csv:
-      x: preds
-      y: digit
-      template: bar_horizontal
-      title: Histogram of Predictions
-  - probs.json:
-      x: actual
-      y: prob
-      template: scatter
-      title: Predicted Probabilities
-  - training/plots/images
 stages:
   train:
     cmd: python train.py
@@ -37,10 +8,11 @@ stages:
       - params.yaml:
     outs:
       - model.pt
-      - training/plots:
-          persist: true
       - hist.csv
     metrics:
       - training/metrics.json:
           persist: true
           cache: false
+    plots:
+      - training/plots:
+          persist: true
