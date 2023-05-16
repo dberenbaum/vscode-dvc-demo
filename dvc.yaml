@@ -5,6 +5,7 @@ plots:
         training/plots/metrics/train/acc.tsv: acc
         training/plots/metrics/test/acc.tsv: acc
       y_label: accuracy
+      template: vega_linear.json
   - Loss:
       x: step
       y:
