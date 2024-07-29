@@ -1,4 +1,4 @@
 [core]
     remote = storage
 ['remote "storage"']
-    url = https://remote.dvc.org/mnist-vscode
+    url = s3://dave-sandbox/remote
