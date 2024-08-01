@@ -115,7 +115,7 @@ def save_hist(predicted, fname):
                comments="")
 
 
-def save_probs(probs, actual, fname, size):
+def get_probs(probs, actual, size):
     probs_series = []
     sample_indices = np.random.randint(0, len(probs), size)
     for i in sample_indices:
@@ -123,8 +123,7 @@ def save_probs(probs, actual, fname, size):
             "actual": actual[i],
             "prob": float(probs[i][actual[i]])
         })
-    with open(fname, "w") as f:
-        json.dump(probs_series, f)
+    return probs_series
 
 
 def main():
@@ -168,7 +167,9 @@ def main():
         for k, v in metrics_train.items():
             live.log_metric(f"train/{k}", v)
         metrics_test, actual, predicted, probs = evaluate(model, x_test, y_test)
-        save_probs(probs, actual, "probs.json", size=500)
+        probs = get_probs(probs, actual, size=500)
+        live.log_plot("probs.json", probs, x="actual", y="prob", template="scatter",
+                      title="Predicted Probabilites")
         for k, v in metrics_test.items():
             live.log_metric(f"test/{k}", v)
         unique, counts = np.unique(predicted, return_counts=True)
