@@ -31,6 +31,6 @@ stages:
       size: 190
     - path: training/plots
       hash: md5
-      md5: fad810886be2fe87dcaa731d9f3d8618.dir
-      size: 678529
+      md5: 25fdf88a5c991c9ac64bbd3df1f60192.dir
+      size: 678564
       nfiles: 7
